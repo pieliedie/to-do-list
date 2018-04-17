@@ -19,6 +19,9 @@ export class InputBar extends Component {
 
     handleClick = (event) => {
         this.state.value === '' ? alert(`Please write something.`) : this.props.handleDataFromInput(this.state.value);
+        this.setState({
+            value: '',
+        });
     }
 
     render() {

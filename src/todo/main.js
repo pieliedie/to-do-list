@@ -5,12 +5,12 @@ import {InputBar} from './header';
 export class App extends Component {
     constructor(props){
         super(props);
-        this.itemList = [];
+        this.itemList = localStorage.getItem('myData') ? JSON.parse(localStorage.getItem('myData')) : [];
         this.state = {
             itemList: this.itemList,
         }
         }
-
+    
     handleDataFromInput = (dataFromInput) => {
         let data = {
             completed: false,
@@ -22,6 +22,8 @@ export class App extends Component {
         this.setState({
             itemList: this.itemList
         });
+
+        localStorage.setItem("myData", JSON.stringify(this.itemList));
     }
 
     handleDeleteCallback = (dataFromListItem) => {
@@ -29,6 +31,7 @@ export class App extends Component {
         this.setState({
             itemList: this.itemList
         });
+        localStorage.setItem("myData", JSON.stringify(this.itemList));
     }
 
     handleCompleteCallback = (itemIndex, itemStatus)=> {
@@ -36,6 +39,7 @@ export class App extends Component {
         this.setState({
             itemList: this.itemList
         });
+        localStorage.setItem("myData", JSON.stringify(this.itemList));
     }
 
     render(){
