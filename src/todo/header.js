@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import add from '../add.svg';
 
 export class InputBar extends Component {
     constructor(props) {
@@ -26,7 +27,7 @@ export class InputBar extends Component {
                 <input type="text" placeholder="Enter an activity.." className="itemInput" 
                     value={this.state.value} onChange={this.handleChange} ref = "inputRef"/>
                 <button className = "addButton" onClick = {this.handleClick}>
-                    Add
+                    <img src={add} alt="Add" />
                 </button>
             </header>
         )

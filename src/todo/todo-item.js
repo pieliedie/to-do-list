@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import check from '../check.svg';
+import trash from '../trash.svg';
 
 export class ToDoItem extends Component {
     constructor(props){
@@ -21,8 +23,8 @@ export class ToDoItem extends Component {
             return (<li className = "completed">
                 {this.props.value}
                 <div className = "buttons">
-                    <button className = "complete" onClick = {this.handleComplete}>{this.done}</button>
-                    <button className = "remove" onClick = {this.handleDelete}>{this.remove}</button>
+                    <button className = "complete" onClick = {this.handleComplete}><img src = {check} alt = {this.done}/></button>
+                    <button className = "remove" onClick = {this.handleDelete}><img src = {trash} alt = {this.remove}/></button>
                 </div>
             </li>);
         }
@@ -30,8 +32,8 @@ export class ToDoItem extends Component {
         return (<li>
             {this.props.value}
             <div className = "buttons">
-                    <button className = "complete" onClick = {this.handleComplete}>{this.done}</button>
-                    <button className = "remove" onClick = {this.handleDelete}>{this.remove}</button>
+                    <button className = "complete" onClick = {this.handleComplete}><img src = {check} alt = {this.done}/></button>
+                    <button className = "remove" onClick = {this.handleDelete}><img src = {trash} alt = {this.remove}/></button>
                 </div>
         </li>);
     }
